@@ -24,6 +24,11 @@ cd ./demo_app
 ./up
 ```
 
+You can test the search api by running the following command -- 
+```
+curl -v -POST -H "Content-type: application/json" -d '{"top_k": 2, "data":[" The MNIST database of handwritten digits has a training set of 60,000 examples, and a test set of 10,000 examples."]}' 'http://localhost:65481/api/search'
+```
+
 
 Demo page is not complete atm...
 ![Demo page](https://github.com/askmuhsin/fast_forward_life/blob/master/elems/demo_page.png)
