@@ -1,3 +1,5 @@
-jina[devel,torch,transformers,http]==0.5.5
+jina[devel,torch,transformers,http,hub]==0.5.5
 fastapi==0.61.1
 tqdm==4.49.0
+torch
+transformers
