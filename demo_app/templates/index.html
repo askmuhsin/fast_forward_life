@@ -1,1 +1,77 @@
-<h1>demo app</h1>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>demo app</title>
+    <style media="screen">
+      body {
+        border: 5px solid white;
+        padding: 5%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>demo app</h1>
+
+    <h3>Total words read : <span id='total_num_of_words'></span></h3>
+    <h3>Total words to read : <span id='total_words_to_read'></span></h3>
+    <h3>Total words removed : <span id='total_words_removed'></span></h3>
+
+    <p></p>
+    <p style="color:#39ff14; background:black" id='debug_console'>debug : </p>
+    <p></p>
+
+    <div class=card-group>
+    {% for row in papers[:3] %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h2 class="card-title">{{ row.paper_name }}</h2>
+        <em>{{ row.year }}</em>
+        <p class="card-text">{{ row.content[:250] }} ... (truncated)</p>
+        <p class="card-text">number of words : {{ row.num_of_words }}</p>
+        <a href="#" class="btn btn-primary mark_read" value='{{ row.paper }}'>Mark as Read</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <p></p>
+
+    <div class=card-group>
+    {% for row in papers[3:] %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h2 class="card-title">{{ row.paper_name }}</h2>
+        <em>{{ row.year }}</em>
+        <p class="card-text">{{ row.content[:250] }} ... (truncated)</p>
+        <p class="card-text">number of words : {{ row.num_of_words }}</p>
+        <a href="#" class="btn btn-primary mark_read" value='{{ row.paper }}'>Mark as Read</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+  var content = {{ papers|tojson|safe }};
+  var total_num_of_words_tag = document.getElementById('total_num_of_words');
+  var total_words_to_read_tag = document.getElementById('total_words_to_read');
+  var total_words_removed_tag = document.getElementById('total_words_removed');
+
+  var total_num_of_words = 0;
+  for (var i=0; i<content.length; i++) {
+    total_num_of_words += content[i]['num_of_words'];
+  }
+  total_num_of_words_tag.textContent = 0;
+  total_words_to_read_tag.textContent = total_num_of_words;
+  total_words_removed_tag.textContent = 0;
+
+
+
+</script>

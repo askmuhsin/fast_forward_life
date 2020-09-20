@@ -10,6 +10,7 @@ import requests
 import uvicorn
 import logging
 import base64
+import csv
 import os
 import helpers
 
@@ -26,4 +27,24 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    return templates.TemplateResponse("index.html", {'request': request})
+    data_file_path = '../datasets/paper_reader_demo/example_papers.csv'
+    papers = []
+
+    with open(data_file_path, newline='', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            papers.append({
+                'paper_name': row[0],
+                'year': row[1],
+                'title': row[2],
+                'content': row[4],
+                'num_of_words': len(row[4].split(' '))
+            })
+
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            'request': request,
+            'papers': papers[1:]
+        }
+    )
