@@ -3,3 +3,6 @@ fastapi==0.61.1
 tqdm==4.49.0
 torch
 transformers
+aiofiles
+uvicorn
+fastapi
