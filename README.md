@@ -1,4 +1,7 @@
 # fast_forward_life
+<p align="center">
+  <img src="https://github.com/askmuhsin/fast_forward_life/blob/master/elems/ffl_logo.png" />
+</p>
 imagine you could index all the information you consume digitally, and then all your future consumptions are optimized accordingly.
 fast_forward_life wants to do just that for you.
 All the information you consume digitally gets indexed so you don't have to repeatedly watch, read, or listen to the same piece of information.
