@@ -31,7 +31,7 @@ def input_fn():
             d.tags['Paper_name'] = row[0]
             d.tags['Year'] = row[1]
             d.tags['Title'] = row[2]
-            d.tags['Text'] = row[4]
+            d.text = row[4]
             yield d
 
 # for index
