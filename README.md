@@ -27,7 +27,7 @@ cd ./demo_app
 
 You can test the search api by running the following command -- 
 ```
-curl -v -POST -H "Content-type: application/json" -d '{"top_k": 2, "data":[" The MNIST database of handwritten digits has a training set of 60,000 examples, and a test set of 10,000 examples."]}' 'http://localhost:65481/api/search'
+curl -v -POST -H "Content-type: application/json" -d '{"top_k": 2, "data":["In deep learning, a convolutional neural network is a class of deep neural networks, most commonly applied to analyzing visual imagery"]}' 'http://localhost:65481/api/search'
 ```
 
 # Project description
