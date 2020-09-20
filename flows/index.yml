@@ -1,6 +1,4 @@
 !Flow
-with:
-  logserver: true
 pods:
   crafter:
     uses: pods/craft.yml

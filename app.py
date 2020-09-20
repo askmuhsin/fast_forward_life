@@ -39,7 +39,7 @@ def index():
     f = Flow.load_config('flows/index.yml')
 
     with f:
-        f.index(input_fn, batch_size=8)
+        f.index(input_fn, batch_size=1)
 
     # for search
 
