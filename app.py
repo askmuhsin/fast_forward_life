@@ -34,14 +34,11 @@ def input_fn():
             d.text = row[4]
             yield d
 
-# for index
 def index():
     f = Flow.load_config('flows/index.yml')
 
     with f:
         f.index(input_fn, batch_size=1)
-
-    # for search
 
 
 def search():
@@ -51,7 +48,6 @@ def search():
         f.block()
 
 
-# for test before put into docker
 def dryrun():
     f = Flow.load_config('flows/query.yml')
 
