@@ -45,7 +45,10 @@ For this hackathon, I just focused on one facet of this problem, which is dealin
 The ability of JINA to run a scalable streaming server for indexing data and searching data along with the advancement in feature extractors and classifiers can make this a reality. There are challenges like how to build an interface for the thousands of media platforms out there (youtube, arxiv, blogs, spotify, so on). But I believe that too is addressable.
 
 <p align="center">
-  <img src="https://github.com/askmuhsin/fast_forward_life/blob/master/elems/poster_.png" />
+  <img src="https://github.com/askmuhsin/fast_forward_life/blob/master/elems/app_structur.png" />
+</p>
+<p align="center">
+  <img src="https://github.com/askmuhsin/fast_forward_life/blob/master/elems/poster_.png"  />
 </p>
 
 
